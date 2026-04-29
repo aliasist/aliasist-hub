@@ -4,32 +4,41 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "#0a1410",
-        panel: "#0d1c16",
-        panel2: "#13251e",
-        border: "#1a2e26",
-        ink: "#e8f4ee",
-        muted: "#7a9085",
-        teal: "#0acb9b",
-        tealDim: "#06956e",
-        cyan: "#06b6d4",
+        // SpaceSist deep-space palette
+        bg: "#06070f",
+        surface: "#0c0e1a",
+        surface2: "#111326",
+        surface3: "#171930",
+        border: "#1e2140",
+        borderBright: "#2d3260",
+        ink: "#e4e6f5",
+        muted: "#7a7e9a",
+        faint: "#3d4060",
+        accent: "#c5a352",
+        accentDim: "rgba(197,163,82,0.19)",
+        // Data accent colors
+        blue: "#4a8fd4",
+        red: "#e05555",
+        green: "#4ec994",
+        purple: "#9b6cf0",
+        orange: "#f0934a",
+        teal: "#4acfc9",
+        yellow: "#f0d44a",
       },
       fontFamily: {
-        sans: ['"Space Grotesk"', "system-ui", "sans-serif"],
-        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
-      },
-      backgroundImage: {
-        "dot-grid":
-          "radial-gradient(circle at 1px 1px, rgba(10,203,155,0.12) 1px, transparent 0)",
-      },
-      backgroundSize: {
-        dots: "32px 32px",
-      },
-      boxShadow: {
-        teal: "0 0 0 1px rgba(10,203,155,0.25), 0 8px 32px -8px rgba(10,203,155,0.18)",
+        display: ['Zodiak', 'Georgia', 'serif'],
+        sans: ['"Cabinet Grotesk"', '"Helvetica Neue"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', '"Courier New"', 'monospace'],
       },
       borderRadius: {
-        DEFAULT: "0.375rem",
+        sm: "6px",
+        DEFAULT: "10px",
+        md: "10px",
+        lg: "16px",
+        xl: "20px",
+      },
+      transitionTimingFunction: {
+        spring: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },

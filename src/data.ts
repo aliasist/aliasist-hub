@@ -8,10 +8,10 @@ export type Project = {
   url: string;
   status: Status;
   category: "Flagship" | "Live App" | "Tool" | "Brand";
-  accent: string;
+  /** Tailwind color key matching keys in tailwind.config.js */
+  accent: "accent" | "blue" | "red" | "green" | "purple" | "orange" | "teal" | "yellow";
   glyph: string;
   highlights: string[];
-  repo?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -24,8 +24,8 @@ export const PROJECTS: Project[] = [
     url: "https://datasist.aliasist.com",
     status: "live",
     category: "Flagship",
-    accent: "#0acb9b",
-    glyph: "◇",
+    accent: "accent",
+    glyph: "◆",
     highlights: ["Facilities map", "Grid risk", "Utility signals"],
   },
   {
@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
     url: "https://pulse.aliasist.com",
     status: "live",
     category: "Live App",
-    accent: "#0acb9b",
+    accent: "green",
     glyph: "▲",
     highlights: ["Live quotes", "AI research", "Pitch builder"],
   },
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     url: "https://space.aliasist.com",
     status: "live",
     category: "Live App",
-    accent: "#06b6d4",
+    accent: "blue",
     glyph: "◯",
     highlights: ["ISS tracking", "APOD", "Asteroid feed"],
   },
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     url: "https://ecosist.aliasist.com",
     status: "live",
     category: "Live App",
-    accent: "#0acb9b",
+    accent: "teal",
     glyph: "◈",
     highlights: ["Grid emissions", "Air quality", "Map UX"],
   },
@@ -76,7 +76,7 @@ export const PROJECTS: Project[] = [
     url: "https://aliasist.tech",
     status: "beta",
     category: "Tool",
-    accent: "#06956e",
+    accent: "purple",
     glyph: "◬",
     highlights: ["Auto-sort", "Rules engine", "CLI-friendly"],
   },
@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
     url: "https://aliasist.com",
     status: "live",
     category: "Brand",
-    accent: "#7a9085",
+    accent: "orange",
     glyph: "✦",
     highlights: ["Case studies", "Build logs", "Contact"],
   },
@@ -101,3 +101,15 @@ export const SUITE_STATS = [
   { label: "Mode", value: "Public" },
   { label: "Status", value: "Operational" },
 ];
+
+/** Map for inline accent colors (since Tailwind can't resolve dynamic class names cleanly). */
+export const ACCENT_HEX: Record<Project["accent"], string> = {
+  accent: "#c5a352",
+  blue: "#4a8fd4",
+  red: "#e05555",
+  green: "#4ec994",
+  purple: "#9b6cf0",
+  orange: "#f0934a",
+  teal: "#4acfc9",
+  yellow: "#f0d44a",
+};
